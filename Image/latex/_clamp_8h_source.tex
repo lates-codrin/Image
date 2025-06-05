@@ -1,0 +1,12 @@
+\doxysection{Clamp.\+h}
+\hypertarget{_clamp_8h_source}{}\label{_clamp_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00003\ T\ clamp(T\ val,\ T\ low,\ T\ high)\ \{}
+\DoxyCodeLine{00004\ \ \ \ \ \textcolor{keywordflow}{if}\ (val\ <\ low)\ \textcolor{keywordflow}{return}\ low;}
+\DoxyCodeLine{00005\ \ \ \ \ \textcolor{keywordflow}{if}\ (val\ >\ high)\ \textcolor{keywordflow}{return}\ high;}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{keywordflow}{return}\ val;}
+\DoxyCodeLine{00007\ \}}
+
+\end{DoxyCode}

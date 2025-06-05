@@ -1,0 +1,163 @@
+\doxysection{Drawing\+Exports.\+h File Reference}
+\hypertarget{_drawing_exports_8h}{}\label{_drawing_exports_8h}\index{DrawingExports.h@{DrawingExports.h}}
+
+
+Contains the declarations for drawing and image manipulation functions.  
+
+
+{\ttfamily \#include "{}Core.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+IMAGECPP\+\_\+\+API void \mbox{\hyperlink{_drawing_exports_8h_a8056dc3faac0854603b7c2c081db8d80}{Draw\+Text\+On\+Image}} (const char \texorpdfstring{$\ast$}{*}filepath, const char \texorpdfstring{$\ast$}{*}text, int x, int y, unsigned char color)
+\begin{DoxyCompactList}\small\item\em Draws text on the specified image. \end{DoxyCompactList}\item 
+IMAGECPP\+\_\+\+API void \mbox{\hyperlink{_drawing_exports_8h_a8008c8f901ee733463545fec56110f00}{Draw\+Rectangle\+On\+Image}} (const char \texorpdfstring{$\ast$}{*}filepath, int x, int y, int width, int height, unsigned char color, bool filled)
+\begin{DoxyCompactList}\small\item\em Draws a rectangle on the specified image. \end{DoxyCompactList}\item 
+IMAGECPP\+\_\+\+API void \mbox{\hyperlink{_drawing_exports_8h_a01a7531ddf3190833b2cabb0ece010eb}{Draw\+Circle\+On\+Image}} (const char \texorpdfstring{$\ast$}{*}filepath, int cx, int cy, int radius, unsigned char color, bool filled)
+\begin{DoxyCompactList}\small\item\em Draws a circle on the specified image. \end{DoxyCompactList}\item 
+IMAGECPP\+\_\+\+API void \mbox{\hyperlink{_drawing_exports_8h_aea780ee5c1813d13485cc35e42bfd14e}{Apply\+Brightness\+Contrast}} (const char \texorpdfstring{$\ast$}{*}input\+Path, const char \texorpdfstring{$\ast$}{*}output\+Path, float contrast, int brightness)
+\begin{DoxyCompactList}\small\item\em Applies brightness and contrast adjustments to an image. \end{DoxyCompactList}\item 
+IMAGECPP\+\_\+\+API void \mbox{\hyperlink{_drawing_exports_8h_a6f9a0f5845d474fd44db23f4d6a9c2a9}{Clear\+Image}} (const char \texorpdfstring{$\ast$}{*}filepath)
+\begin{DoxyCompactList}\small\item\em Clears the image by resetting its contents. \end{DoxyCompactList}\item 
+IMAGECPP\+\_\+\+API void \mbox{\hyperlink{_drawing_exports_8h_a5442766dd798f6335149f6f71d95ac2f}{run\+All\+Tests}} ()
+\begin{DoxyCompactList}\small\item\em Runs a set of tests on the image manipulation functions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains the declarations for drawing and image manipulation functions. 
+
+This file provides declarations for functions to manipulate images such as drawing text, rectangles, circles, applying filters, and clearing the image. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_drawing_exports_8h_aea780ee5c1813d13485cc35e42bfd14e}\index{DrawingExports.h@{DrawingExports.h}!ApplyBrightnessContrast@{ApplyBrightnessContrast}}
+\index{ApplyBrightnessContrast@{ApplyBrightnessContrast}!DrawingExports.h@{DrawingExports.h}}
+\doxysubsubsection{\texorpdfstring{ApplyBrightnessContrast()}{ApplyBrightnessContrast()}}
+{\footnotesize\ttfamily \label{_drawing_exports_8h_aea780ee5c1813d13485cc35e42bfd14e} 
+IMAGECPP\+\_\+\+API void Apply\+Brightness\+Contrast (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{input\+Path}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{output\+Path}{, }\item[{float}]{contrast}{, }\item[{int}]{brightness}{}\end{DoxyParamCaption})}
+
+
+
+Applies brightness and contrast adjustments to an image. 
+
+This function modifies the brightness and contrast of the input image and saves the modified image to an output path.
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+Path} & The path to the input image. \\
+\hline
+{\em output\+Path} & The path to save the modified image. \\
+\hline
+{\em contrast} & The contrast factor to apply. \\
+\hline
+{\em brightness} & The brightness adjustment value. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_drawing_exports_8h_a6f9a0f5845d474fd44db23f4d6a9c2a9}\index{DrawingExports.h@{DrawingExports.h}!ClearImage@{ClearImage}}
+\index{ClearImage@{ClearImage}!DrawingExports.h@{DrawingExports.h}}
+\doxysubsubsection{\texorpdfstring{ClearImage()}{ClearImage()}}
+{\footnotesize\ttfamily \label{_drawing_exports_8h_a6f9a0f5845d474fd44db23f4d6a9c2a9} 
+IMAGECPP\+\_\+\+API void Clear\+Image (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{filepath}{}\end{DoxyParamCaption})}
+
+
+
+Clears the image by resetting its contents. 
+
+This function clears the image at the specified path, essentially resetting it to a blank state.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filepath} & The path to the image file. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_drawing_exports_8h_a01a7531ddf3190833b2cabb0ece010eb}\index{DrawingExports.h@{DrawingExports.h}!DrawCircleOnImage@{DrawCircleOnImage}}
+\index{DrawCircleOnImage@{DrawCircleOnImage}!DrawingExports.h@{DrawingExports.h}}
+\doxysubsubsection{\texorpdfstring{DrawCircleOnImage()}{DrawCircleOnImage()}}
+{\footnotesize\ttfamily \label{_drawing_exports_8h_a01a7531ddf3190833b2cabb0ece010eb} 
+IMAGECPP\+\_\+\+API void Draw\+Circle\+On\+Image (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{filepath}{, }\item[{int}]{cx}{, }\item[{int}]{cy}{, }\item[{int}]{radius}{, }\item[{unsigned char}]{color}{, }\item[{bool}]{filled}{}\end{DoxyParamCaption})}
+
+
+
+Draws a circle on the specified image. 
+
+This function draws a circle at the specified center and radius with the given color.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filepath} & Path to the image file. \\
+\hline
+{\em cx} & The x-\/coordinate for the center of the circle. \\
+\hline
+{\em cy} & The y-\/coordinate for the center of the circle. \\
+\hline
+{\em radius} & The radius of the circle. \\
+\hline
+{\em color} & The color of the circle (0–255). \\
+\hline
+{\em filled} & Boolean indicating if the circle should be filled or not. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_drawing_exports_8h_a8008c8f901ee733463545fec56110f00}\index{DrawingExports.h@{DrawingExports.h}!DrawRectangleOnImage@{DrawRectangleOnImage}}
+\index{DrawRectangleOnImage@{DrawRectangleOnImage}!DrawingExports.h@{DrawingExports.h}}
+\doxysubsubsection{\texorpdfstring{DrawRectangleOnImage()}{DrawRectangleOnImage()}}
+{\footnotesize\ttfamily \label{_drawing_exports_8h_a8008c8f901ee733463545fec56110f00} 
+IMAGECPP\+\_\+\+API void Draw\+Rectangle\+On\+Image (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{filepath}{, }\item[{int}]{x}{, }\item[{int}]{y}{, }\item[{int}]{width}{, }\item[{int}]{height}{, }\item[{unsigned char}]{color}{, }\item[{bool}]{filled}{}\end{DoxyParamCaption})}
+
+
+
+Draws a rectangle on the specified image. 
+
+This function draws a rectangle at a given position with the specified width, height, color, and whether it\textquotesingle{}s filled or not.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filepath} & Path to the image file. \\
+\hline
+{\em x} & The x-\/coordinate for the top-\/left corner of the rectangle. \\
+\hline
+{\em y} & The y-\/coordinate for the top-\/left corner of the rectangle. \\
+\hline
+{\em width} & The width of the rectangle. \\
+\hline
+{\em height} & The height of the rectangle. \\
+\hline
+{\em color} & The color of the rectangle (0–255). \\
+\hline
+{\em filled} & Boolean indicating if the rectangle should be filled or not. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_drawing_exports_8h_a8056dc3faac0854603b7c2c081db8d80}\index{DrawingExports.h@{DrawingExports.h}!DrawTextOnImage@{DrawTextOnImage}}
+\index{DrawTextOnImage@{DrawTextOnImage}!DrawingExports.h@{DrawingExports.h}}
+\doxysubsubsection{\texorpdfstring{DrawTextOnImage()}{DrawTextOnImage()}}
+{\footnotesize\ttfamily \label{_drawing_exports_8h_a8056dc3faac0854603b7c2c081db8d80} 
+IMAGECPP\+\_\+\+API void Draw\+Text\+On\+Image (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{filepath}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{text}{, }\item[{int}]{x}{, }\item[{int}]{y}{, }\item[{unsigned char}]{color}{}\end{DoxyParamCaption})}
+
+
+
+Draws text on the specified image. 
+
+This function allows drawing a string of text onto an image at a specified position and color.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filepath} & Path to the image file. \\
+\hline
+{\em text} & The text to draw on the image. \\
+\hline
+{\em x} & The x-\/coordinate for the text position. \\
+\hline
+{\em y} & The y-\/coordinate for the text position. \\
+\hline
+{\em color} & The color of the text (0–255). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_drawing_exports_8h_a5442766dd798f6335149f6f71d95ac2f}\index{DrawingExports.h@{DrawingExports.h}!runAllTests@{runAllTests}}
+\index{runAllTests@{runAllTests}!DrawingExports.h@{DrawingExports.h}}
+\doxysubsubsection{\texorpdfstring{runAllTests()}{runAllTests()}}
+{\footnotesize\ttfamily \label{_drawing_exports_8h_a5442766dd798f6335149f6f71d95ac2f} 
+IMAGECPP\+\_\+\+API void run\+All\+Tests (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Runs a set of tests on the image manipulation functions. 
+
+This function executes multiple test functions to verify the correctness of image manipulation operations (e.\+g., drawing, applying filters, etc.). 

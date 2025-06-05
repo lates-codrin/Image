@@ -1,0 +1,62 @@
+\doxysection{Image.\+h}
+\hypertarget{_image_8h_source}{}\label{_image_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Size.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Point.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Rectangle.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }Image\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ \ \ Image();}
+\DoxyCodeLine{00015\ \ \ \ \ Image(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ height);}
+\DoxyCodeLine{00016\ \ \ \ \ Image(\textcolor{keyword}{const}\ Image\&\ other);}
+\DoxyCodeLine{00017\ \ \ \ \ \string~Image();}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{comment}{//\ Methods}}
+\DoxyCodeLine{00020\ \ \ \ \ Image\&\ operator=(\textcolor{keyword}{const}\ Image\&\ other);}
+\DoxyCodeLine{00021\ \ \ \ \ Image\ operator+(\textcolor{keyword}{const}\ Image\&\ i);}
+\DoxyCodeLine{00022\ \ \ \ \ Image\ operator-\/(\textcolor{keyword}{const}\ Image\&\ i);}
+\DoxyCodeLine{00023\ \ \ \ \ Image\ operator+(\textcolor{keywordtype}{int}\ value);}
+\DoxyCodeLine{00024\ \ \ \ \ Image\ operator-\/(\textcolor{keywordtype}{int}\ value);}
+\DoxyCodeLine{00025\ \ \ \ \ Image\ operator*(\textcolor{keywordtype}{int}\ value);}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{bool}\ getROI(Image\&\ roiImg,\ \mbox{\hyperlink{class_rectangle}{Rectangle}}\ roiRect);}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{bool}\ getROI(Image\&\ roiImg,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ height);}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{bool}\ isEmpty()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_size}{Size}}\ size()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ width()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ height()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\&\ at(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ at(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ y)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00036\ \ \ \ \ }
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\&\ at(\mbox{\hyperlink{class_point}{Point}}\ pt);}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}*\ row(\textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{bool}\ load(\textcolor{keyword}{const}\ std::string\&\ imagePath);}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{bool}\ save(std::string\ imagePath);}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{bool}\ savePGM(\textcolor{keyword}{const}\ std::string\&\ filename);}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ release();}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{static}\ Image\ zeros(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ height);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{comment}{//\ Friend\ function\ for\ output}}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{friend}\ std::ostream\&\ operator<<(std::ostream\&\ os,\ \textcolor{keyword}{const}\ Image\&\ img);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ m\_width;}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ m\_height;}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}**\ m\_data;}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{comment}{//\ Helper\ functions}}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ allocateData();}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ copyData(\textcolor{keyword}{const}\ Image\&\ other);}
+\DoxyCodeLine{00057\ \};}
+
+\end{DoxyCode}

@@ -1,0 +1,17 @@
+\doxysection{Brightness\+Contrast.\+h}
+\hypertarget{_brightness_contrast_8h_source}{}\label{_brightness_contrast_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}ImageProcessing.h"{}}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{keyword}{class\ }BrightnessContrast\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_image_processing}{ImageProcessing}}\ \{}
+\DoxyCodeLine{00005\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00006\ \ \ \ \ BrightnessContrast(\textcolor{keywordtype}{float}\ alpha\ =\ 1.0f,\ \textcolor{keywordtype}{int}\ beta\ =\ 0);}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keywordtype}{void}\ process(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_image}{Image}}\&\ src,\ \mbox{\hyperlink{class_image}{Image}}\&\ dst)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_alpha;}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_beta;}
+\DoxyCodeLine{00012\ \};}
+
+\end{DoxyCode}

@@ -1,0 +1,19 @@
+\doxysection{Core.\+h}
+\hypertarget{_core_8h_source}{}\label{_core_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#ifdef\ \_IMAGE\_BUILD\_DLL}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#define\ IMAGECPP\_API\ \_\_declspec(dllexport)}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ IMAGECPP\_API\ \_\_declspec(dllimport)}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ IMAGECPP\_API\ \textcolor{keywordtype}{void}\ DrawTextOnImage(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ filepath,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ text,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ color);}
+\DoxyCodeLine{00010\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ IMAGECPP\_API\ \textcolor{keywordtype}{void}\ DrawRectangleOnImage(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ filepath,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ color,\ \textcolor{keywordtype}{bool}\ filled);}
+\DoxyCodeLine{00011\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ IMAGECPP\_API\ \textcolor{keywordtype}{void}\ DrawCircleOnImage(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ filepath,\ \textcolor{keywordtype}{int}\ cx,\ \textcolor{keywordtype}{int}\ cy,\ \textcolor{keywordtype}{int}\ radius,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ color,\ \textcolor{keywordtype}{bool}\ filled);}
+\DoxyCodeLine{00012\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ IMAGECPP\_API\ \textcolor{keywordtype}{void}\ ApplyBrightnessContrast(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ inputPath,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ outputPath,\ \textcolor{keywordtype}{float}\ contrast,\ \textcolor{keywordtype}{int}\ brightness);}
+\DoxyCodeLine{00013\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ IMAGECPP\_API\ \textcolor{keywordtype}{void}\ ClearImage(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ filepath);}
+\DoxyCodeLine{00014\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ IMAGECPP\_API\ \textcolor{keywordtype}{void}\ runAllTests();}
+
+\end{DoxyCode}

@@ -1,0 +1,135 @@
+\doxysection{Drawing.\+h}
+\hypertarget{_drawing_8h_source}{}\label{_drawing_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}Image.h"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{class\ }Drawing\ \{}
+\DoxyCodeLine{00006\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00007\ \ \ \ \ Drawing(\mbox{\hyperlink{class_image}{Image}}\&\ image);}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{comment}{//\ Draw\ a\ line\ using\ Bresenham's\ algorithm}}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordtype}{void}\ drawLine(\textcolor{keywordtype}{int}\ x0,\ \textcolor{keywordtype}{int}\ y0,\ \textcolor{keywordtype}{int}\ x1,\ \textcolor{keywordtype}{int}\ y1,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ color);}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{comment}{//\ Draw\ a\ rectangle\ (filled\ or\ not)}}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{void}\ drawRectangle(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ color,\ \textcolor{keywordtype}{bool}\ filled);}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{comment}{//\ Draw\ a\ circle\ (filled\ or\ not)}}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{void}\ drawCircle(\textcolor{keywordtype}{int}\ cx,\ \textcolor{keywordtype}{int}\ cy,\ \textcolor{keywordtype}{int}\ radius,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ color,\ \textcolor{keywordtype}{bool}\ filled);}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{void}\ drawText(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keyword}{const}\ std::string\&\ text,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ color,\ \textcolor{keywordtype}{int}\ scale\ =\ 2)\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Define\ a\ simple\ 5x7\ font\ for\ each\ character.\ This\ can\ be\ expanded.}}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::vector<unsigned\ char>>\ font\ =\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \{0x00,\ 0x00,\ 0x00,\ 0x00,\ 0x00\},\ \textcolor{comment}{//\ SPACE\ (0x20)}}
+\DoxyCodeLine{00021\ \ \ \ \ \{0x00,\ 0x00,\ 0x5F,\ 0x00,\ 0x00\},\ \textcolor{comment}{//\ !}}
+\DoxyCodeLine{00022\ \ \ \ \ \{0x00,\ 0x07,\ 0x00,\ 0x07,\ 0x00\},\ \textcolor{comment}{//\ "{}}}
+\DoxyCodeLine{00023\ \ \ \ \ \{0x14,\ 0x7F,\ 0x14,\ 0x7F,\ 0x14\},\ \textcolor{comment}{//\ \#}}
+\DoxyCodeLine{00024\ \ \ \ \ \{0x24,\ 0x2A,\ 0x7F,\ 0x2A,\ 0x12\},\ \textcolor{comment}{//\ \$}}
+\DoxyCodeLine{00025\ \ \ \ \ \{0x23,\ 0x13,\ 0x08,\ 0x64,\ 0x62\},\ \textcolor{comment}{//\ \%}}
+\DoxyCodeLine{00026\ \ \ \ \ \{0x36,\ 0x49,\ 0x55,\ 0x22,\ 0x50\},\ \textcolor{comment}{//\ \&}}
+\DoxyCodeLine{00027\ \ \ \ \ \{0x00,\ 0x05,\ 0x03,\ 0x00,\ 0x00\},\ \textcolor{comment}{//\ '}}
+\DoxyCodeLine{00028\ \ \ \ \ \{0x00,\ 0x1C,\ 0x22,\ 0x41,\ 0x00\},\ \textcolor{comment}{//\ (}}
+\DoxyCodeLine{00029\ \ \ \ \ \{0x00,\ 0x41,\ 0x22,\ 0x1C,\ 0x00\},\ \textcolor{comment}{//\ )}}
+\DoxyCodeLine{00030\ \ \ \ \ \{0x14,\ 0x08,\ 0x3E,\ 0x08,\ 0x14\},\ \textcolor{comment}{//\ *}}
+\DoxyCodeLine{00031\ \ \ \ \ \{0x08,\ 0x08,\ 0x3E,\ 0x08,\ 0x08\},\ \textcolor{comment}{//\ +}}
+\DoxyCodeLine{00032\ \ \ \ \ \{0x00,\ 0x50,\ 0x30,\ 0x00,\ 0x00\},\ \textcolor{comment}{//\ ,}}
+\DoxyCodeLine{00033\ \ \ \ \ \{0x08,\ 0x08,\ 0x08,\ 0x08,\ 0x08\},\ \textcolor{comment}{//\ -\/}}
+\DoxyCodeLine{00034\ \ \ \ \ \{0x00,\ 0x60,\ 0x60,\ 0x00,\ 0x00\},\ \textcolor{comment}{//\ .}}
+\DoxyCodeLine{00035\ \ \ \ \ \{0x20,\ 0x10,\ 0x08,\ 0x04,\ 0x02\},\ \textcolor{comment}{//\ /}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \{0x3E,\ 0x51,\ 0x49,\ 0x45,\ 0x3E\},\ \textcolor{comment}{//\ 0}}
+\DoxyCodeLine{00038\ \ \ \ \ \{0x00,\ 0x42,\ 0x7F,\ 0x40,\ 0x00\},\ \textcolor{comment}{//\ 1}}
+\DoxyCodeLine{00039\ \ \ \ \ \{0x42,\ 0x61,\ 0x51,\ 0x49,\ 0x46\},\ \textcolor{comment}{//\ 2}}
+\DoxyCodeLine{00040\ \ \ \ \ \{0x21,\ 0x41,\ 0x45,\ 0x4B,\ 0x31\},\ \textcolor{comment}{//\ 3}}
+\DoxyCodeLine{00041\ \ \ \ \ \{0x18,\ 0x14,\ 0x12,\ 0x7F,\ 0x10\},\ \textcolor{comment}{//\ 4}}
+\DoxyCodeLine{00042\ \ \ \ \ \{0x27,\ 0x45,\ 0x45,\ 0x45,\ 0x39\},\ \textcolor{comment}{//\ 5}}
+\DoxyCodeLine{00043\ \ \ \ \ \{0x3C,\ 0x4A,\ 0x49,\ 0x49,\ 0x30\},\ \textcolor{comment}{//\ 6}}
+\DoxyCodeLine{00044\ \ \ \ \ \{0x01,\ 0x71,\ 0x09,\ 0x05,\ 0x03\},\ \textcolor{comment}{//\ 7}}
+\DoxyCodeLine{00045\ \ \ \ \ \{0x36,\ 0x49,\ 0x49,\ 0x49,\ 0x36\},\ \textcolor{comment}{//\ 8}}
+\DoxyCodeLine{00046\ \ \ \ \ \{0x06,\ 0x49,\ 0x49,\ 0x29,\ 0x1E\},\ \textcolor{comment}{//\ 9}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \{0x00,\ 0x36,\ 0x36,\ 0x00,\ 0x00\},\ \textcolor{comment}{//\ :}}
+\DoxyCodeLine{00049\ \ \ \ \ \{0x00,\ 0x56,\ 0x36,\ 0x00,\ 0x00\},\ \textcolor{comment}{//\ ;}}
+\DoxyCodeLine{00050\ \ \ \ \ \{0x08,\ 0x14,\ 0x22,\ 0x41,\ 0x00\},\ \textcolor{comment}{//\ <}}
+\DoxyCodeLine{00051\ \ \ \ \ \{0x14,\ 0x14,\ 0x14,\ 0x14,\ 0x14\},\ \textcolor{comment}{//\ =}}
+\DoxyCodeLine{00052\ \ \ \ \ \{0x00,\ 0x41,\ 0x22,\ 0x14,\ 0x08\},\ \textcolor{comment}{//\ >}}
+\DoxyCodeLine{00053\ \ \ \ \ \{0x02,\ 0x01,\ 0x51,\ 0x09,\ 0x06\},\ \textcolor{comment}{//\ ?}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \{0x32,\ 0x49,\ 0x79,\ 0x41,\ 0x3E\},\ \textcolor{comment}{//\ @}}
+\DoxyCodeLine{00056\ \ \ \ \ \{0x7E,\ 0x11,\ 0x11,\ 0x11,\ 0x7E\},\ \textcolor{comment}{//\ A}}
+\DoxyCodeLine{00057\ \ \ \ \ \{0x7F,\ 0x49,\ 0x49,\ 0x49,\ 0x36\},\ \textcolor{comment}{//\ B}}
+\DoxyCodeLine{00058\ \ \ \ \ \{0x3E,\ 0x41,\ 0x41,\ 0x41,\ 0x22\},\ \textcolor{comment}{//\ C}}
+\DoxyCodeLine{00059\ \ \ \ \ \{0x7F,\ 0x41,\ 0x41,\ 0x22,\ 0x1C\},\ \textcolor{comment}{//\ D}}
+\DoxyCodeLine{00060\ \ \ \ \ \{0x7F,\ 0x49,\ 0x49,\ 0x49,\ 0x41\},\ \textcolor{comment}{//\ E}}
+\DoxyCodeLine{00061\ \ \ \ \ \{0x7F,\ 0x09,\ 0x09,\ 0x09,\ 0x01\},\ \textcolor{comment}{//\ F}}
+\DoxyCodeLine{00062\ \ \ \ \ \{0x3E,\ 0x41,\ 0x49,\ 0x49,\ 0x7A\},\ \textcolor{comment}{//\ G}}
+\DoxyCodeLine{00063\ \ \ \ \ \{0x7F,\ 0x08,\ 0x08,\ 0x08,\ 0x7F\},\ \textcolor{comment}{//\ H}}
+\DoxyCodeLine{00064\ \ \ \ \ \{0x00,\ 0x41,\ 0x7F,\ 0x41,\ 0x00\},\ \textcolor{comment}{//\ I}}
+\DoxyCodeLine{00065\ \ \ \ \ \{0x20,\ 0x40,\ 0x41,\ 0x3F,\ 0x01\},\ \textcolor{comment}{//\ J}}
+\DoxyCodeLine{00066\ \ \ \ \ \{0x7F,\ 0x08,\ 0x14,\ 0x22,\ 0x41\},\ \textcolor{comment}{//\ K}}
+\DoxyCodeLine{00067\ \ \ \ \ \{0x7F,\ 0x40,\ 0x40,\ 0x40,\ 0x40\},\ \textcolor{comment}{//\ L}}
+\DoxyCodeLine{00068\ \ \ \ \ \{0x7F,\ 0x02,\ 0x0C,\ 0x02,\ 0x7F\},\ \textcolor{comment}{//\ M}}
+\DoxyCodeLine{00069\ \ \ \ \ \{0x7F,\ 0x04,\ 0x08,\ 0x10,\ 0x7F\},\ \textcolor{comment}{//\ N}}
+\DoxyCodeLine{00070\ \ \ \ \ \{0x3E,\ 0x41,\ 0x41,\ 0x41,\ 0x3E\},\ \textcolor{comment}{//\ O}}
+\DoxyCodeLine{00071\ \ \ \ \ \{0x7F,\ 0x09,\ 0x09,\ 0x09,\ 0x06\},\ \textcolor{comment}{//\ P}}
+\DoxyCodeLine{00072\ \ \ \ \ \{0x3E,\ 0x41,\ 0x51,\ 0x21,\ 0x5E\},\ \textcolor{comment}{//\ Q}}
+\DoxyCodeLine{00073\ \ \ \ \ \{0x7F,\ 0x09,\ 0x19,\ 0x29,\ 0x46\},\ \textcolor{comment}{//\ R}}
+\DoxyCodeLine{00074\ \ \ \ \ \{0x46,\ 0x49,\ 0x49,\ 0x49,\ 0x31\},\ \textcolor{comment}{//\ S}}
+\DoxyCodeLine{00075\ \ \ \ \ \{0x01,\ 0x01,\ 0x7F,\ 0x01,\ 0x01\},\ \textcolor{comment}{//\ T}}
+\DoxyCodeLine{00076\ \ \ \ \ \{0x3F,\ 0x40,\ 0x40,\ 0x40,\ 0x3F\},\ \textcolor{comment}{//\ U}}
+\DoxyCodeLine{00077\ \ \ \ \ \{0x1F,\ 0x20,\ 0x40,\ 0x20,\ 0x1F\},\ \textcolor{comment}{//\ V}}
+\DoxyCodeLine{00078\ \ \ \ \ \{0x3F,\ 0x40,\ 0x38,\ 0x40,\ 0x3F\},\ \textcolor{comment}{//\ W}}
+\DoxyCodeLine{00079\ \ \ \ \ \{0x63,\ 0x14,\ 0x08,\ 0x14,\ 0x63\},\ \textcolor{comment}{//\ X}}
+\DoxyCodeLine{00080\ \ \ \ \ \{0x07,\ 0x08,\ 0x70,\ 0x08,\ 0x07\},\ \textcolor{comment}{//\ Y}}
+\DoxyCodeLine{00081\ \ \ \ \ \{0x61,\ 0x51,\ 0x49,\ 0x45,\ 0x43\}\ \ \textcolor{comment}{//\ Z}}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Loop\ through\ each\ character\ in\ the\ text}}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ text.size();\ ++i)\ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ c\ =\ text[i];}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Find\ the\ character\ index\ in\ the\ font\ array\ (only\ uppercase\ for\ simplicity)}}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ charIndex\ =\ c\ -\/\ 32;\ \textcolor{comment}{//\ Adjust\ if\ you\ want\ lowercase\ or\ more\ characters}}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (charIndex\ <\ 0\ ||\ charIndex\ >=\ font.size())\ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ charIndex\ <<\ \textcolor{charliteral}{'\ '};}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};\ \textcolor{comment}{//\ Skip\ characters\ outside\ the\ supported\ set}}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Get\ the\ 5x7\ bitmap\ for\ the\ current\ character}}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<unsigned\ char>\&\ charBitmap\ =\ font[charIndex];}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Draw\ the\ character\ by\ rotating\ it\ 90\ degrees\ (clockwise)}}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ row\ =\ 0;\ row\ <\ 5;\ ++row)\ \{\ \textcolor{comment}{//\ 5\ rows\ of\ pixels\ per\ character}}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ col\ =\ 0;\ col\ <\ 7;\ ++col)\ \{\ \textcolor{comment}{//\ 7\ columns\ of\ pixels\ per\ character}}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ pixel\ =\ (charBitmap[row]\ >>\ (6\ -\/\ col))\ \&\ 1;\ \textcolor{comment}{//\ Get\ the\ pixel\ (1\ =\ on,\ 0\ =\ off)}}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pixel)\ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Scale\ the\ text\ by\ drawing\ multiple\ pixels\ for\ each\ character\ pixel}}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ scale;\ ++i)\ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ scale;\ ++j)\ \{}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ In\ the\ rotated\ bitmap,\ row\ and\ col\ swap}}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x\ +\ col\ *\ scale\ +\ i\ <\ img.width()\ \&\&\ y\ +\ row\ *\ scale\ +\ j\ <\ img.height())\ \{}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ img.at(x\ +\ col\ *\ scale\ +\ i,\ y\ +\ row\ *\ scale\ +\ j)\ =\ color;}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Move\ to\ the\ next\ character\ position\ (move\ vertically\ down\ by\ the\ height\ of\ the\ character\ +\ space)}}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ y\ +=\ scale\ *\ 7;\ \ \textcolor{comment}{//\ Adjust\ the\ spacing\ between\ characters\ if\ needed}}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00120\ \ \ \ \ \}}
+\DoxyCodeLine{00121\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00122\ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\&\ img;}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{comment}{//\ Helper\ methods\ for\ drawing\ lines\ and\ shapes}}
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordtype}{void}\ drawHorizontalLine(\textcolor{keywordtype}{int}\ x0,\ \textcolor{keywordtype}{int}\ x1,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ color);}
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordtype}{void}\ drawVerticalLine(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y0,\ \textcolor{keywordtype}{int}\ y1,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ color);}
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordtype}{void}\ drawCirclePoints(\textcolor{keywordtype}{int}\ cx,\ \textcolor{keywordtype}{int}\ cy,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ color,\ \textcolor{keywordtype}{bool}\ filled);}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{void}\ drawPoint(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ color);}
+\DoxyCodeLine{00129\ \};}
+\DoxyCodeLine{00130\ }
+
+\end{DoxyCode}

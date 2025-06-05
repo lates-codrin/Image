@@ -1,0 +1,89 @@
+\doxysection{Image Class Reference}
+\hypertarget{class_image}{}\label{class_image}\index{Image@{Image}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_image_ac5e2af51c27fcf1d37db9f6aadfcb511}\label{class_image_ac5e2af51c27fcf1d37db9f6aadfcb511} 
+{\bfseries Image} (unsigned int width, unsigned int height)
+\item 
+\Hypertarget{class_image_a5a3bc57bd7ba53f9ae55b1963b9ba0a1}\label{class_image_a5a3bc57bd7ba53f9ae55b1963b9ba0a1} 
+{\bfseries Image} (const \mbox{\hyperlink{class_image}{Image}} \&other)
+\item 
+\Hypertarget{class_image_a3037a583d17594b1835d9b6b8d09875c}\label{class_image_a3037a583d17594b1835d9b6b8d09875c} 
+\mbox{\hyperlink{class_image}{Image}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_image}{Image}} \&other)
+\item 
+\Hypertarget{class_image_aab5a98397772e7560eb2031048eba7c5}\label{class_image_aab5a98397772e7560eb2031048eba7c5} 
+\mbox{\hyperlink{class_image}{Image}} {\bfseries operator+} (const \mbox{\hyperlink{class_image}{Image}} \&i)
+\item 
+\Hypertarget{class_image_a832b7fe46bee528f901ea8cb043fd778}\label{class_image_a832b7fe46bee528f901ea8cb043fd778} 
+\mbox{\hyperlink{class_image}{Image}} {\bfseries operator-\/} (const \mbox{\hyperlink{class_image}{Image}} \&i)
+\item 
+\Hypertarget{class_image_a1b13c7bfbdb8947729dbd594f0e77802}\label{class_image_a1b13c7bfbdb8947729dbd594f0e77802} 
+\mbox{\hyperlink{class_image}{Image}} {\bfseries operator+} (int value)
+\item 
+\Hypertarget{class_image_a4e90736d24a63b8db5b1172eea5e906d}\label{class_image_a4e90736d24a63b8db5b1172eea5e906d} 
+\mbox{\hyperlink{class_image}{Image}} {\bfseries operator-\/} (int value)
+\item 
+\Hypertarget{class_image_a74f69c733bb25357ce20f24db148d68c}\label{class_image_a74f69c733bb25357ce20f24db148d68c} 
+\mbox{\hyperlink{class_image}{Image}} {\bfseries operator\texorpdfstring{$\ast$}{*}} (int value)
+\item 
+\Hypertarget{class_image_a12d814c60b17eb8e580c8eb9f98381dc}\label{class_image_a12d814c60b17eb8e580c8eb9f98381dc} 
+bool {\bfseries get\+ROI} (\mbox{\hyperlink{class_image}{Image}} \&roi\+Img, \mbox{\hyperlink{class_rectangle}{Rectangle}} roi\+Rect)
+\item 
+\Hypertarget{class_image_a330d026cb65fc54c017946a74446948c}\label{class_image_a330d026cb65fc54c017946a74446948c} 
+bool {\bfseries get\+ROI} (\mbox{\hyperlink{class_image}{Image}} \&roi\+Img, unsigned int x, unsigned int y, unsigned int width, unsigned int height)
+\item 
+\Hypertarget{class_image_ad9b9016c9e5b309b338b12d76a09aa5f}\label{class_image_ad9b9016c9e5b309b338b12d76a09aa5f} 
+bool {\bfseries is\+Empty} () const
+\item 
+\Hypertarget{class_image_a8aa00d3217972b99d7e24ad79beb9148}\label{class_image_a8aa00d3217972b99d7e24ad79beb9148} 
+\mbox{\hyperlink{class_size}{Size}} {\bfseries size} () const
+\item 
+\Hypertarget{class_image_a752ddff28c08bf5482655a7be69c5c6b}\label{class_image_a752ddff28c08bf5482655a7be69c5c6b} 
+unsigned int {\bfseries width} () const
+\item 
+\Hypertarget{class_image_a412a3c201296b9f1855d65c79051a886}\label{class_image_a412a3c201296b9f1855d65c79051a886} 
+unsigned int {\bfseries height} () const
+\item 
+\Hypertarget{class_image_ac1842cee5e075f51477e7638658cf595}\label{class_image_ac1842cee5e075f51477e7638658cf595} 
+unsigned char \& {\bfseries at} (unsigned int x, unsigned int y)
+\item 
+\Hypertarget{class_image_a36c9fd9b5341e26792df9ab17720cedd}\label{class_image_a36c9fd9b5341e26792df9ab17720cedd} 
+unsigned char {\bfseries at} (unsigned int x, unsigned int y) const
+\item 
+\Hypertarget{class_image_aaa6753ddce56439494f85ef6361493da}\label{class_image_aaa6753ddce56439494f85ef6361493da} 
+unsigned char \& {\bfseries at} (\mbox{\hyperlink{class_point}{Point}} pt)
+\item 
+\Hypertarget{class_image_ad1cf39918720da8495d79e4ebe6e98b5}\label{class_image_ad1cf39918720da8495d79e4ebe6e98b5} 
+unsigned char \texorpdfstring{$\ast$}{*} {\bfseries row} (int y)
+\item 
+\Hypertarget{class_image_a9f98e38c2e84f7d48410535f160ef39f}\label{class_image_a9f98e38c2e84f7d48410535f160ef39f} 
+bool {\bfseries load} (const std\+::string \&image\+Path)
+\item 
+\Hypertarget{class_image_af3142cc1112b4296dafae7dc1eddb2f6}\label{class_image_af3142cc1112b4296dafae7dc1eddb2f6} 
+bool {\bfseries save} (std\+::string image\+Path)
+\item 
+\Hypertarget{class_image_a9813c9d514227227cfed11cf9d50d10d}\label{class_image_a9813c9d514227227cfed11cf9d50d10d} 
+bool {\bfseries save\+PGM} (const std\+::string \&filename)
+\item 
+\Hypertarget{class_image_aa4d8a644bef789d80d9b6e7fed78ca5a}\label{class_image_aa4d8a644bef789d80d9b6e7fed78ca5a} 
+void {\bfseries release} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_image_ac798669b7cfb855fae40ffb082fe479f}\label{class_image_ac798669b7cfb855fae40ffb082fe479f} 
+static \mbox{\hyperlink{class_image}{Image}} {\bfseries zeros} (unsigned int width, unsigned int height)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_image_a6a9cea0602a28d7060b771cb99eb3030}\label{class_image_a6a9cea0602a28d7060b771cb99eb3030} 
+std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&os, const \mbox{\hyperlink{class_image}{Image}} \&img)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Image.\+h\item 
+Image.\+cpp\end{DoxyCompactItemize}

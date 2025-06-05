@@ -1,0 +1,41 @@
+\doxysection{Convolution Class Reference}
+\hypertarget{class_convolution}{}\label{class_convolution}\index{Convolution@{Convolution}}
+Inheritance diagram for Convolution\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_convolution}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_convolution_abec50588055b38d8a951c6a75c0b2308}\label{class_convolution_abec50588055b38d8a951c6a75c0b2308} 
+using {\bfseries Scale\+Function} = std\+::function$<$unsigned char(float)$>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_convolution_a0272f1d939a7264ea3fe03e001c1b7f1}\label{class_convolution_a0272f1d939a7264ea3fe03e001c1b7f1} 
+{\bfseries Convolution} (const std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&kernel, Scale\+Function scale\+Func)
+\item 
+void \mbox{\hyperlink{class_convolution_a6ab48b383a640955dbdb10354d73583f}{process}} (const \mbox{\hyperlink{class_image}{Image}} \&src, \mbox{\hyperlink{class_image}{Image}} \&dst) override
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_convolution_a6ab48b383a640955dbdb10354d73583f}\index{Convolution@{Convolution}!process@{process}}
+\index{process@{process}!Convolution@{Convolution}}
+\doxysubsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily \label{class_convolution_a6ab48b383a640955dbdb10354d73583f} 
+void Convolution\+::process (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_image}{Image}} \&}]{src}{, }\item[{\mbox{\hyperlink{class_image}{Image}} \&}]{dst}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_image_processing}{Image\+Processing}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Convolution.\+h\item 
+Convolution.\+cpp\end{DoxyCompactItemize}

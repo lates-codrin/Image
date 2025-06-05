@@ -1,0 +1,53 @@
+\doxysection{Rectangle Class Reference}
+\hypertarget{class_rectangle}{}\label{class_rectangle}\index{Rectangle@{Rectangle}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_rectangle_a90d00c9b9a56de06db42d03dcf9ffa41}\label{class_rectangle_a90d00c9b9a56de06db42d03dcf9ffa41} 
+{\bfseries Rectangle} (unsigned int x, unsigned int y, unsigned int width, unsigned int height)
+\item 
+\Hypertarget{class_rectangle_abace6836bc0860a9c05cbef210484fe1}\label{class_rectangle_abace6836bc0860a9c05cbef210484fe1} 
+{\bfseries Rectangle} (const \mbox{\hyperlink{class_point}{Point}} \&top\+Left, const \mbox{\hyperlink{class_point}{Point}} \&bottom\+Right)
+\item 
+\Hypertarget{class_rectangle_a293cddb61ea9dd3a9193d72fa5d77300}\label{class_rectangle_a293cddb61ea9dd3a9193d72fa5d77300} 
+\mbox{\hyperlink{class_rectangle}{Rectangle}} {\bfseries operator+} (const \mbox{\hyperlink{class_point}{Point}} \&offset) const
+\item 
+\Hypertarget{class_rectangle_adcfa90460f5fbd5f6199ab13c4c31843}\label{class_rectangle_adcfa90460f5fbd5f6199ab13c4c31843} 
+\mbox{\hyperlink{class_rectangle}{Rectangle}} {\bfseries operator-\/} (const \mbox{\hyperlink{class_point}{Point}} \&offset) const
+\item 
+\Hypertarget{class_rectangle_a0cc4c99f47020e7b11a64bb4ed478db4}\label{class_rectangle_a0cc4c99f47020e7b11a64bb4ed478db4} 
+\mbox{\hyperlink{class_rectangle}{Rectangle}} {\bfseries operator\&} (const \mbox{\hyperlink{class_rectangle}{Rectangle}} \&other) const
+\item 
+\Hypertarget{class_rectangle_a268e228beaefc56bf770d549f1514aa1}\label{class_rectangle_a268e228beaefc56bf770d549f1514aa1} 
+\mbox{\hyperlink{class_rectangle}{Rectangle}} {\bfseries operator\texorpdfstring{$\vert$}{|}} (const \mbox{\hyperlink{class_rectangle}{Rectangle}} \&other) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_rectangle_a4356c5257fabc8a01f083da0205467bf}\label{class_rectangle_a4356c5257fabc8a01f083da0205467bf} 
+unsigned int {\bfseries x}
+\item 
+\Hypertarget{class_rectangle_a106fc39893493f63cd956105578ee4e8}\label{class_rectangle_a106fc39893493f63cd956105578ee4e8} 
+unsigned int {\bfseries y}
+\item 
+\Hypertarget{class_rectangle_a957062cf4bc5f95d4768e49255e38114}\label{class_rectangle_a957062cf4bc5f95d4768e49255e38114} 
+unsigned int {\bfseries width}
+\item 
+\Hypertarget{class_rectangle_a196aa6d10395e0e0298420c7ed763eb3}\label{class_rectangle_a196aa6d10395e0e0298420c7ed763eb3} 
+unsigned int {\bfseries height}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_rectangle_a9398d5727e6497a169fd3ad1f076004c}\label{class_rectangle_a9398d5727e6497a169fd3ad1f076004c} 
+std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&os, const \mbox{\hyperlink{class_rectangle}{Rectangle}} \&rect)
+\item 
+\Hypertarget{class_rectangle_a8f851dff52ae0eb740f8abcf924cf81d}\label{class_rectangle_a8f851dff52ae0eb740f8abcf924cf81d} 
+std\+::istream \& {\bfseries operator$>$$>$} (std\+::istream \&is, \mbox{\hyperlink{class_rectangle}{Rectangle}} \&rect)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Rectangle.\+h\item 
+Rectangle.\+cpp\end{DoxyCompactItemize}

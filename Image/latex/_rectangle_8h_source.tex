@@ -1,0 +1,25 @@
+\doxysection{Rectangle.\+h}
+\hypertarget{_rectangle_8h_source}{}\label{_rectangle_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}Point.h"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{class\ }Rectangle\ \{}
+\DoxyCodeLine{00006\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ x,\ y,\ width,\ height;}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \ \ \ \ Rectangle();}
+\DoxyCodeLine{00010\ \ \ \ \ Rectangle(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ height);}
+\DoxyCodeLine{00011\ \ \ \ \ Rectangle(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\&\ topLeft,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\&\ bottomRight);}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ Rectangle\ operator+(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\&\ offset)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00014\ \ \ \ \ Rectangle\ operator-\/(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\&\ offset)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00015\ \ \ \ \ Rectangle\ operator\&(\textcolor{keyword}{const}\ Rectangle\&\ other)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00016\ \ \ \ \ Rectangle\ operator|(\textcolor{keyword}{const}\ Rectangle\&\ other)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{friend}\ std::ostream\&\ operator<<(std::ostream\&\ os,\ \textcolor{keyword}{const}\ Rectangle\&\ rect);}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{friend}\ std::istream\&\ operator>>(std::istream\&\ is,\ Rectangle\&\ rect);}
+\DoxyCodeLine{00020\ \};}
+
+\end{DoxyCode}
